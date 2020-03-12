@@ -7,5 +7,5 @@ WORKDIR /go/src/app
 
 RUN GOOS=linux GOARCH=386 go build -v -o /go/src/app/jenkins-app
 
-RUN sleep 3600
+
 CMD ["./jenkins-app"]
