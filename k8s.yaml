@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-demo
-  namespace: default
+  namespace: ops
 spec:
   selector:
     matchLabels:
@@ -13,7 +13,7 @@ spec:
         app: jenkins-demo
     spec:
       containers:
-      - image: cnych/jenkins-demo:<BUILD_TAG>
+      - image: 10.0.11.125:30000/k8s-jenkins/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
         env:
